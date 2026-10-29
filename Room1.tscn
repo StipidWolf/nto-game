@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dckauieu5qchr"]
+
+[ext_resource type="PackedScene" uid="uid://d1xlj87xadxf2" path="res://player.tscn" id="1_ntrsl"]
+[ext_resource type="Script" uid="uid://dwba0i3vrimfd" path="res://area_2d.gd" id="2_dewo4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjfxj"]
+size = Vector2(254, 40)
+
+[node name="Main" type="Node2D" unique_id=1257447161]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1253386730]
+position = Vector2(4, -58)
+color = Color(0.7792914, 0.7792914, 0.7792913, 1)
+
+[node name="Player" parent="." unique_id=1436077756 instance=ExtResource("1_ntrsl")]
+position = Vector2(-42, -85)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=719044088]
+position = Vector2(407, 206)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1919355191]
+offset_left = -126.0
+offset_top = 11.0
+offset_right = 128.0
+offset_bottom = 51.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1525078768]
+position = Vector2(1, 31)
+shape = SubResource("RectangleShape2D_qjfxj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D" unique_id=1526424310]
+position = Vector2(400, 1)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/StaticBody2D" unique_id=2047672295]
+offset_left = -126.0
+offset_top = 11.0
+offset_right = 128.0
+offset_bottom = 51.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D" unique_id=2031296645]
+position = Vector2(1, 31)
+shape = SubResource("RectangleShape2D_qjfxj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1405188228]
+position = Vector2(279, 124)
+
+[node name="ColorRect" type="ColorRect" parent="Area2D" unique_id=563056544]
+offset_left = 2.0
+offset_top = 16.0
+offset_right = 42.0
+offset_bottom = 56.0
+color = Color(0.9942276, 0, 0.13627222, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1666515097]
+position = Vector2(-6, 16)
+polygon = PackedVector2Array(126, -38, 101, -79, 34, -101, -37, -71, -79, 3, -46, 64, 51, 75, 116, 63, 118, 8)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=684353600]
+position = Vector2(881, 135)
+script = ExtResource("2_dewo4")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D2" unique_id=161278016]
+offset_left = 2.0
+offset_top = 16.0
+offset_right = 42.0
+offset_bottom = 56.0
+color = Color(0.9942276, 0, 0.13627222, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2" unique_id=48532229]
+position = Vector2(-6, 16)
+polygon = PackedVector2Array(126, -38, 101, -79, 34, -101, -37, -71, -79, 3, -46, 64, 51, 75, 116, 63, 118, 8)
