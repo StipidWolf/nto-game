@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://3cjhrs47xmbo"]
+
+[ext_resource type="PackedScene" uid="uid://bxlljy3wr73yt" path="res://menu.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dckauieu5qchr" path="res://Room1.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dgmgkdlj50aj0" path="res://ingame.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node" unique_id=511467671]
+
+[node name="Menu" parent="." unique_id=1429149476 node_paths=PackedStringArray("canvas_mod", "ingame_canvas") instance=ExtResource("1_0xm2m")]
+canvas_mod = NodePath("../CanvasModulate")
+next_scene = ExtResource("2_1bvp3")
+ingame_canvas = NodePath("../Ingame")
+
+[node name="Ingame" parent="." unique_id=1835753063 instance=ExtResource("2_h2yge")]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2119642854]
